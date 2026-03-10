@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import playImg from "./assets/play.png";
@@ -21,44 +20,9 @@ function App() {
   const [workButtonImage, setWorkButtonImage] = useState(workBtn);
   const [gifImage, setGifImage] = useState(idleGif);
   const [isBreak, setIsBreak] = useState(false);
-  const [encouragement, setEncouragement] = useState("");
   const [image, setImage] = useState(playImg);
-  const cheerMessages = [
-    "You Can Do It!",
-    "I believe in you!",
-    "You're amazing!",
-    "Keep going!",
-    "Stay focused!"
-  ];
-
-  const breakMessages = [
-    "Stay hydrated!",
-    "Snacks, maybe?",
-    "Text me!",
-    "I love you <3",
-    "Stretch your legs!"
-  ];
-
-  // Encouragement message updater
-  // useEffect(() => {
-  //   let messageInterval: NodeJS.Timeout;
-
-  //   if (isRunning) {
-  //     const messages = isBreak ? breakMessages : cheerMessages;
-  //     setEncouragement(messages[0]); // set first message initially
-  //     let index = 1
-
-  //     messageInterval = setInterval(() => {
-  //       setEncouragement(messages[index]);
-  //       index = (index + 1) % messages.length;
-  //     }, 4000); // every 4 seconds
-  //   } else {
-  //     setEncouragement("");
-  //   }
-
-  //   return () => clearInterval(messageInterval);
-  // }, [isRunning, isBreak]);
   
+
   useEffect(() => {
   if (!isRunning) return;
 
@@ -75,16 +39,7 @@ function App() {
   return () => clearInterval(timer);
 }, [isRunning]);
 
-  // Countdown timer
-//   useEffect(() => {
-//   if (!isRunning) return;
-
-//   const timer = setInterval(() => {
-//     setTimeLeft(prev => prev - 1);
-//   }, 1000);
-
-//   return () => clearInterval(timer);
-// }, [isRunning]);
+ 
 
   // set initial switch mode to false
   useEffect(() => {
@@ -116,18 +71,7 @@ useEffect(() => {
     setGifImage(idleGif);
   }
 
-  // const handleClick = () => {
-  //   if (!isRunning) {
-  //     setIsRunning(true);
-  //     setGifImage(isBreak ? breakGif : workGif);
-  //     setImage(resetImg);
-  //   } else {
-  //     setIsRunning(false);
-  //     setTimeLeft(isBreak ? 5 * 60 : 25 * 60);
-  //     setGifImage(idleGif);
-  //     setImage(playImg);
-  //   }
-  // }
+ 
 
   const handleClick = () => {
   console.log("start pressed");
