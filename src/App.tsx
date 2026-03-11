@@ -116,9 +116,7 @@ const handleCloseClick = () => {
           </button>
         </div>
 
-        <p className={`encouragement-text ${!isRunning ? "hidden" : ""}`}>
-          { encouragement }
-        </p>
+    
 
         <h1 className="home-timer">{formatTime(timeLeft)}</h1>
         <img src={gifImage} alt="Timer Status" className="gif-image" />
